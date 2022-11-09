@@ -5,8 +5,8 @@ using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth;
-    public Transform player;
+    private int maxHealth = 1;
+    private Transform player;
 
     private int currentHealth;
     private Rigidbody2D rb;
@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player").GetComponent<Transform>();
+        gameObject.GetComponent<AIDestinationSetter>().target = player;
     }
 
     // Update is called once per frame
@@ -46,9 +48,17 @@ public class Enemy : MonoBehaviour
         currentHealth--;
         animator.SetTrigger("TookDamage");
         if(currentHealth <= 0){
-            Destroy(gameObject);
+            Invoke("Die", .3f);
+            Debug.Log("Enemy Killed");
+            //currentHealth = maxHealth;
         }
         KnockBack();
+    }
+
+    void Die(){
+        GameObject.Find("GameManager").GetComponent<GameManager>().EnemyKilled(transform.position);
+        Destroy(gameObject);
+
     }
 
     void KnockBack(){

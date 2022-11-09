@@ -54,9 +54,9 @@ public class PlayerHealth : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){
             animator.SetTrigger("Hurt");
-            //currentHealth--;
+            currentHealth--;
             if(currentHealth <= 0){
-                Destroy(gameObject);
+                GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
             }
             KnockBack(other.gameObject.transform);
         }

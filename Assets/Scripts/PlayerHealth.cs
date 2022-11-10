@@ -46,9 +46,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private IEnumerator Reset(){
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMovementEdulo>().enabled = false;
         yield return new WaitForSeconds(delay);
-        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerMovementEdulo>().enabled = true;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

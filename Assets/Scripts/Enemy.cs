@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    private int maxHealth = 1;
+    private int maxHealth = 3;
     private Transform player;
 
     private int currentHealth;
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
     private float strength = 3f;
     private float delay = 0.5f;
 
+    public GameObject hpSlider;
+ 
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,7 @@ public class Enemy : MonoBehaviour
     {
         
     }
+
     
     private IEnumerator Reset(){
         GetComponent<AIDestinationSetter>().enabled = false;
@@ -45,7 +49,7 @@ public class Enemy : MonoBehaviour
     }
 
     void TakeDamage(){
-        currentHealth--;
+        currentHealth--;   
         animator.SetTrigger("TookDamage");
         if(currentHealth <= 0){
             Invoke("Die", .3f);
@@ -53,6 +57,7 @@ public class Enemy : MonoBehaviour
             //currentHealth = maxHealth;
         }
         KnockBack();
+        hpSlider.GetComponent<Slider>().value = currentHealth;
     }
 
     void Die(){

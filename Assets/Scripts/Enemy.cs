@@ -55,7 +55,8 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("TookDamage");
         if (currentHealth <= 0)
         {
-            Invoke("Die", .3f);
+            // Invoke("Die", .3f);
+            Destroy(gameObject);
             Debug.Log("Enemy Killed");
             //currentHealth = maxHealth;
         }

@@ -8,8 +8,8 @@ public class PowerUp : MonoBehaviour
 
     private bool coolDown = true;
     private CircleCollider2D cc;
-    private float starterRadious = 0.5f;
-    private string[] keys = { "1", "2", "3", "4" };  // 1 = Air, 2 = Fire, 3 = Water, 4 = Earth
+    private float starterRadious = 1.5f;
+    private KeyCode[] keys = { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };  // 1 = Air, 2 = Fire, 3 = Water, 4 = Earth
     private string key1, key2;
     // Start is called before the first frame update
     void Start()
@@ -20,16 +20,29 @@ public class PowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Input.inputString);
+        // print(Input.inputString);
 
         if (coolDown)
         {
-            key1 = Input.inputString;
-            if (keys.Contains(Input.inputString))
+            if (Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha2) || Input.GetKey(KeyCode.Alpha3) || Input.GetKey(KeyCode.Alpha4))
             {
-                key2 = Input.inputString;
-                if (keys.Contains(Input.inputString))
+                for (int i = 0; i < keys.Length; i++)
                 {
+                    if (Input.GetKey(keys[i]))
+                    {
+                        key1 = keys[i].ToString();
+                    }
+                }
+                // key1 = (Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha2) || Input.GetKey(KeyCode.Alpha3) || Input.GetKey(KeyCode.Alpha4)).ToString();
+                if (Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Alpha3) || Input.GetKeyUp(KeyCode.Alpha4))
+                {
+                    for (int i = 0; i < keys.Length; i++)
+                    {
+                        if (Input.GetKeyUp(keys[i]))
+                        {
+                            key2 = keys[i].ToString();
+                        }
+                    }
                     print("Power Up Activated");
                     ActivatePowerUp(key1, key2);
                     coolDown = false;
@@ -45,71 +58,69 @@ public class PowerUp : MonoBehaviour
     void ActivatePowerUp(string key1, string key2)
     {
 
-        print(key1 + " " + key2);
 
-        if (key1 == "1")
+        if (key1 == "Alpha1")
         {
-            if (key2 == "2")
+            if (key2 == "Alpha2")
             {
                 print("Air + Fire");
             }
-            else if (key2 == "3")
+            else if (key2 == "Alpha3")
             {
                 print("Air + Water");
             }
-            else if (key2 == "4")
+            else if (key2 == "Alpha4")
             {
                 print("Air + Earth");
             }
         }
-        else if (key1 == "2")
+        else if (key1 == "Alpha2")
         {
-            if (key2 == "1")
+            if (key2 == "Alpha1")
             {
                 print("Fire + Air");
             }
-            else if (key2 == "3")
+            else if (key2 == "Alpha3")
             {
                 print("Fire + Water");
             }
-            else if (key2 == "4")
+            else if (key2 == "Alpha4")
             {
                 print("Fire + Earth");
             }
         }
-        else if (key1 == "3")
+        else if (key1 == "Alpha3")
         {
-            if (key2 == "1")
+            if (key2 == "Alpha1")
             {
                 print("Water + Air");
             }
-            else if (key2 == "2")
+            else if (key2 == "Alpha2")
             {
                 print("Water + Fire");
             }
-            else if (key2 == "4")
+            else if (key2 == "Alpha4")
             {
                 print("Water + Earth");
             }
         }
-        else if (key1 == "4")
+        else if (key1 == "Alpha4")
         {
-            if (key2 == "1")
+            if (key2 == "Alpha1")
             {
                 print("Earth + Air");
             }
-            else if (key2 == "2")
+            else if (key2 == "Alpha2")
             {
                 print("Earth + Fire");
             }
-            else if (key2 == "3")
+            else if (key2 == "Alpha3")
             {
                 print("Earth + Water");
             }
         }
-
-        print("Power Up Activated");
-        InvokeRepeating("Grow", 0.1f, 0.1f);
+        cc.radius = starterRadious;
+        InvokeRepeating("Shrink", 0.1f, 0.1f);
         // cc.radius = radious;
     }
     IEnumerator PowerUpCoolDown()
@@ -118,17 +129,17 @@ public class PowerUp : MonoBehaviour
         print("Power Up Ready");
         coolDown = true;
     }
-    void Grow()
+    void Shrink()
     {
 
-        if (cc.radius < 1.5f)
+        if (cc.radius > 0.3f)
         {
-            cc.radius += 0.1f;
+            cc.radius -= 0.1f;
         }
         else
         {
             cc.radius = starterRadious;
-            CancelInvoke("Grow");
+            CancelInvoke("Shrink");
         }
     }
 }

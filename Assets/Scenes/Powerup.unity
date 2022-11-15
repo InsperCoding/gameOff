@@ -123,6 +123,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &225145005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225145006}
+  - component: {fileID: 225145008}
+  - component: {fileID: 225145007}
+  m_Layer: 0
+  m_Name: PowerUp
+  m_TagString: PowerUp
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &225145006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225145005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1406668551}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &225145007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225145005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe947a9bad011a44a9d441c37140ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &225145008
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225145005}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!1 &459736356
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,8 +889,6 @@ GameObject:
   - component: {fileID: 1406668552}
   - component: {fileID: 1406668548}
   - component: {fileID: 1406668554}
-  - component: {fileID: 1406668553}
-  - component: {fileID: 1406668556}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -941,6 +999,7 @@ Transform:
   m_Children:
   - {fileID: 714467298}
   - {fileID: 1384596417}
+  - {fileID: 225145006}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -963,18 +1022,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1406668553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406668547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe947a9bad011a44a9d441c37140ef5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1406668554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,22 +1070,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7555998, y: 1}
   m_EdgeRadius: 0
---- !u!58 &1406668556
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406668547}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &1718283340
 GameObject:
   m_ObjectHideFlags: 0
@@ -15270,7 +15301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773432864216598721, guid: 94ead530331febb4eb106c6108ab9b5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7773432864216598724, guid: 94ead530331febb4eb106c6108ab9b5b, type: 3}
       propertyPath: player
@@ -15319,6 +15350,10 @@ PrefabInstance:
     - target: {fileID: 7773432864216598726, guid: 94ead530331febb4eb106c6108ab9b5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773432864216598727, guid: 94ead530331febb4eb106c6108ab9b5b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7773432864216598729, guid: 94ead530331febb4eb106c6108ab9b5b, type: 3}
       propertyPath: target

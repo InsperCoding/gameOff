@@ -27,10 +27,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
-    private IEnumerator Reset(){
+
+    private IEnumerator Reset()
+    {
         GetComponent<AIDestinationSetter>().enabled = false;
         GetComponent<AIPath>().enabled = false;
         yield return new WaitForSeconds(delay);
@@ -38,16 +39,22 @@ public class Enemy : MonoBehaviour
         GetComponent<AIPath>().enabled = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Sword"){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print(other.gameObject.tag);
+        if (other.gameObject.tag == "Sword" || other.gameObject.tag == "PowerUp")
+        {
+            print("dano");
             TakeDamage();
         }
     }
 
-    void TakeDamage(){
+    void TakeDamage()
+    {
         currentHealth--;
         animator.SetTrigger("TookDamage");
-        if(currentHealth <= 0){
+        if (currentHealth <= 0)
+        {
             Invoke("Die", .3f);
             Debug.Log("Enemy Killed");
             //currentHealth = maxHealth;
@@ -55,13 +62,15 @@ public class Enemy : MonoBehaviour
         KnockBack();
     }
 
-    void Die(){
+    void Die()
+    {
         GameObject.Find("GameManager").GetComponent<GameManager>().EnemyKilled(transform.position);
         Destroy(gameObject);
 
     }
 
-    void KnockBack(){
+    void KnockBack()
+    {
         StopAllCoroutines();
         StartCoroutine(Reset());
         Vector2 difference = transform.position - player.position;

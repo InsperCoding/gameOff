@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Update(){
-        print(PlayerPrefs.GetInt("score"));
+        //print(PlayerPrefs.GetInt("score"));
         if (SceneManager.GetActiveScene().name == "GameOver"){
             scoreText = GameObject.Find("ScoreText");
             scoreText.GetComponent<UnityEngine.UI.Text>().text = PlayerPrefs.GetInt("score").ToString();

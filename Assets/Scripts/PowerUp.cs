@@ -8,7 +8,8 @@ public class PowerUp : MonoBehaviour
 
     private bool coolDown = true;
     private CircleCollider2D cc;
-    private float starterRadious = 1.5f;
+    public float starterRadious = 1.5f;
+    public float finalRadious = 0.3f;
     private KeyCode[] keys = { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };  // 1 = Air, 2 = Fire, 3 = Water, 4 = Earth
     private string key1, key2;
     // Start is called before the first frame update
@@ -64,14 +65,17 @@ public class PowerUp : MonoBehaviour
             if (key2 == "Alpha2")
             {
                 print("Air + Fire");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha3")
             {
                 print("Air + Water");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha4")
             {
                 print("Air + Earth");
+                cc.radius = finalRadious;
             }
         }
         else if (key1 == "Alpha2")
@@ -79,14 +83,17 @@ public class PowerUp : MonoBehaviour
             if (key2 == "Alpha1")
             {
                 print("Fire + Air");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha3")
             {
                 print("Fire + Water");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha4")
             {
                 print("Fire + Earth");
+                cc.radius = finalRadious;
             }
         }
         else if (key1 == "Alpha3")
@@ -94,14 +101,17 @@ public class PowerUp : MonoBehaviour
             if (key2 == "Alpha1")
             {
                 print("Water + Air");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha2")
             {
                 print("Water + Fire");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha4")
             {
                 print("Water + Earth");
+                cc.radius = finalRadious;
             }
         }
         else if (key1 == "Alpha4")
@@ -109,19 +119,24 @@ public class PowerUp : MonoBehaviour
             if (key2 == "Alpha1")
             {
                 print("Earth + Air");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha2")
             {
                 print("Earth + Fire");
+                cc.radius = finalRadious;
             }
             else if (key2 == "Alpha3")
             {
                 print("Earth + Water");
+                cc.radius = finalRadious;
             }
         }
+
+
         cc.radius = starterRadious;
+        print("cu");
         InvokeRepeating("Shrink", 0.1f, 0.1f);
-        // cc.radius = radious;
     }
     IEnumerator PowerUpCoolDown()
     {
@@ -138,7 +153,8 @@ public class PowerUp : MonoBehaviour
         }
         else
         {
-            cc.radius = starterRadious;
+            print("aaaa");
+            cc.radius = finalRadious;
             CancelInvoke("Shrink");
         }
     }

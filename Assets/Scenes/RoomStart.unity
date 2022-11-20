@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17e74f71bd7b984094fb7a3b170fe50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomNumber: 0
+  RoomNumber: 2
 --- !u!1001 &193304290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4919,7 +4919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17e74f71bd7b984094fb7a3b170fe50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomNumber: 0
+  RoomNumber: 2
 --- !u!114 &1562346387 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2710819478826613177, guid: 49af3aed783bdd044a5ed946756dee46, type: 3}

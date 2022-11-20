@@ -47,8 +47,8 @@ MonoBehaviour:
   unitName: Ugly Slime
   str: 50
   currStr: 50
-  HP: 150
-  currHP: 150
+  HP: 80
+  currHP: 80
   def: 50
   currDef: 50
   spd: 50

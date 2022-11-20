@@ -47,8 +47,8 @@ MonoBehaviour:
   unitName: Demon Mage
   str: 50
   currStr: 50
-  HP: 100
-  currHP: 100
+  HP: 150
+  currHP: 150
   def: 50
   currDef: 50
   spd: 40

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3952278db8b3da744a93f80fe16055f6
+  - enabled: 1
     path: Assets/Scenes/RoomStart.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -48,11 +51,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Room22.unity
     guid: ab75f0de50720296bad5dcbbf82f764d
   - enabled: 1
+    path: Assets/Scenes/RoomBoss2.unity
+    guid: 9747fc4401e0fa547b3ecd02ba2df2a7
+  - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: e2d578c0568da6544a52321b9200cecf
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3952278db8b3da744a93f80fe16055f6
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4574dd0cd65e99a4c918a9e906219e5c

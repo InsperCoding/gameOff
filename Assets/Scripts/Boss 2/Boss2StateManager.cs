@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss2StateManager : MonoBehaviour
 {
     Boss2BaseState currentState;
-    //public BossHorizontalAttackState HorizontalAttackState = new BossHorizontalAttackState();
+    public Boss2CloseRangeAttack CloseRangeAttack = new Boss2CloseRangeAttack();
     public Boss2FireAttackState FireAttackState = new Boss2FireAttackState();
     public Boss2MovementState MovingState = new Boss2MovementState();
     

@@ -47,8 +47,8 @@ MonoBehaviour:
   unitName: Fire Elemental
   str: 50
   currStr: 50
-  HP: 300
-  currHP: 300
+  HP: 100
+  currHP: 100
   def: 60
   currDef: 60
   spd: 20

@@ -40,6 +40,11 @@ public class Boss2MovementState : Boss2BaseState
         {
             Boss.SwitchState(Boss.FireAttackState);
         }
+        else if (distance.magnitude < 2)
+        {
+            Boss.SwitchState(Boss.CloseRangeAttack);
+        }
+
         else
         {
             Debug.Log("NN CRASHA PFFV");

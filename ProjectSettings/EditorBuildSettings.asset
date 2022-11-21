@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/RoomStart.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/RoomBoss.unity
-    guid: c326325bf928184478621732f4e6e946
-  - enabled: 1
     path: Assets/Scenes/Room1.unity
     guid: 69de6c1843104ec4bbd643c6bd97db1f
   - enabled: 1
@@ -26,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room5.unity
     guid: 749834626b0f7a14a84989c4ad3a48a8
+  - enabled: 1
+    path: Assets/Scenes/RoomBoss.unity
+    guid: c326325bf928184478621732f4e6e946
   - enabled: 1
     path: Assets/Scenes/Room6.unity
     guid: cddfa9fcd55fcac41bdf73ad0a7fcbfa
@@ -47,9 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room22.unity
     guid: ab75f0de50720296bad5dcbbf82f764d
-  - enabled: 1
-    path: Assets/Scenes/Combat.unity
-    guid: c6f5074ce68e7bc40af432d286389022
   - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: e2d578c0568da6544a52321b9200cecf

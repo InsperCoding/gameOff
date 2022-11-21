@@ -18,51 +18,71 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
     private float strength = 10f;
     private float delay = .2f;
+    private GameObject canvasHearts;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        canvasHearts = GameObject.Find("Hearts");
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i] = canvasHearts.transform.GetChild(i).GetComponent<Image>();
+        }
+
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        for(int i=0; i <hearts.Length; i++)
+    {
+        for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < currentHealth){
+            if (i < currentHealth)
+            {
                 hearts[i].sprite = fullHeart;
-            } else {
+            }
+            else
+            {
                 hearts[i].sprite = emptyHeart;
             }
 
             // Para aumentar a quantidade de coracoes do player
-            if (i < numOfHearts){
+            if (i < numOfHearts)
+            {
                 hearts[i].enabled = true;
-            } else {
+            }
+            else
+            {
                 hearts[i].enabled = false;
             }
         }
     }
 
-    private IEnumerator Reset(){
+    private IEnumerator Reset()
+    {
         GetComponent<PlayerMovementEdulo>().enabled = false;
         yield return new WaitForSeconds(delay);
         GetComponent<PlayerMovementEdulo>().enabled = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Enemy"){
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
             animator.SetTrigger("Hurt");
             currentHealth--;
-            if(currentHealth <= 0){
+            if (currentHealth <= 0)
+            {
                 GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
             }
             KnockBack(other.gameObject.transform);
         }
     }
 
-    void KnockBack(Transform sender){
+    void KnockBack(Transform sender)
+    {
         StopAllCoroutines();
         StartCoroutine(Reset());
         Vector2 difference = transform.position - sender.position;

@@ -86,7 +86,8 @@ public class PowerUp : MonoBehaviour
 
         if (cc.radius > starterRadious)
         {
-            InvokeRepeating("Shrink", 0.1f, 0.1f);
+            StartCoroutine("PowerUpActivated");
+            // InvokeRepeating("Shrink", 0.1f, 0.1f);
         }
     }
     IEnumerator PowerUpCoolDown()
@@ -94,6 +95,13 @@ public class PowerUp : MonoBehaviour
         yield return new WaitForSeconds(5);
         print("Power Up Ready");
         coolDown = true;
+    }
+    IEnumerator PowerUpActivated()
+    {
+        yield return new WaitForSeconds(1.5f);
+        cc.radius = starterRadious;
+        animator.SetInteger("Pup", 0);
+
     }
     void Shrink()
     {

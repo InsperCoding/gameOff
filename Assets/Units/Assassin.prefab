@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Assassin
-  str: 70
-  currStr: 70
+  str: 60
+  currStr: 60
   HP: 50
   currHP: 50
   def: 40

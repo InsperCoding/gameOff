@@ -129,8 +129,8 @@ MonoBehaviour:
   unitName: Spooky Skeleton
   str: 40
   currStr: 40
-  HP: 150
-  currHP: 150
+  HP: 70
+  currHP: 70
   def: 30
   currDef: 30
   spd: 20

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    private int maxHealth = 1;
+    private int maxHealth = 3;
     private Transform player;
 
     private int currentHealth;
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
     private float strength = 3f;
     private float delay = 0.5f;
 
+    public GameObject hpSlider;
+ 
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -27,8 +30,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
     
     private IEnumerator Reset(){
         GetComponent<AIDestinationSetter>().enabled = false;
@@ -38,30 +42,39 @@ public class Enemy : MonoBehaviour
         GetComponent<AIPath>().enabled = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Sword"){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print(other.gameObject.tag);
+        if (other.gameObject.tag == "Sword" || other.gameObject.tag == "PowerUp")
+        {
+            print("dano");
             TakeDamage();
         }
     }
 
     void TakeDamage(){
-        currentHealth--;
+        currentHealth--;   
         animator.SetTrigger("TookDamage");
-        if(currentHealth <= 0){
-            Invoke("Die", .3f);
+        if (currentHealth <= 0)
+        {
+            // Invoke("Die", .3f);
+            Destroy(gameObject);
             Debug.Log("Enemy Killed");
             //currentHealth = maxHealth;
         }
         KnockBack();
+        hpSlider.GetComponent<Slider>().value = currentHealth;
     }
 
-    void Die(){
+    void Die()
+    {
         GameObject.Find("GameManager").GetComponent<GameManager>().EnemyKilled(transform.position);
         Destroy(gameObject);
 
     }
 
-    void KnockBack(){
+    void KnockBack()
+    {
         StopAllCoroutines();
         StartCoroutine(Reset());
         Vector2 difference = transform.position - player.position;

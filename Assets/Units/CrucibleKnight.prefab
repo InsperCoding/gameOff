@@ -98,8 +98,8 @@ MonoBehaviour:
   unitName: Crucible Knight
   str: 15
   currStr: 15
-  HP: 200
-  currHP: 200
+  HP: 110
+  currHP: 110
   def: 30
   currDef: 30
   spd: 10

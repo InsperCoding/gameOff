@@ -9,10 +9,15 @@ public class Boss2MovementState : Boss2BaseState
     float RecoveryTime = 0.5f;
     float Timer = 0f;
 
+    Animator animator;
+
+
     //public System.Random Rand { get => Rand; set => Rand = value; }
 
     public override void EnterState(Boss2StateManager boss)
     {
+        animator = boss.gameObject.GetComponent<Animator>();
+        animator.SetBool("IsAttacking", false);
         Debug.Log("Hello from movement state");
         //Rand = new System.Random();
         Timer = 0f;
@@ -26,11 +31,15 @@ public class Boss2MovementState : Boss2BaseState
         direction.Normalize();
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        
+        if (distance.x < 0){
+            Boss.GetComponent<SpriteRenderer>().flipX = false;
+        } else {
+            Boss.GetComponent<SpriteRenderer>().flipX = true;
+        }
         if (Timer < StepTime)
         {
             Boss.rb.velocity = direction*Boss.speed;
-            Boss.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            Boss.transform.GetChild(0).gameObject.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
         else if (Timer < StepTime + RecoveryTime)
         {

@@ -237,8 +237,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213359752}
-  - component: {fileID: 213359754}
   - component: {fileID: 213359753}
+  - component: {fileID: 213359754}
   m_Layer: 0
   m_Name: FireAttack
   m_TagString: Untagged
@@ -275,8 +275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   attackDamage: 0
---- !u!60 &213359754
-PolygonCollider2D:
+--- !u!61 &213359754
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -288,7 +288,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.0141606, y: -0.97414595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -298,13 +298,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.44333458, y: 0.4933324}
-      - {x: 0.45531672, y: 0.45107487}
-      - {x: 0.4492374, y: -0.45387232}
-      - {x: 4.5355716, y: -1.1045731}
-      - {x: 4.500718, y: 1.3219578}
+  serializedVersion: 2
+  m_Size: {x: 2.8310547, y: 1.9433826}
+  m_EdgeRadius: 0
 --- !u!1001 &251314846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -492,7 +488,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 9083683855015346827, guid: 1d919743bfac1e4438507174551a6d0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -613,8 +609,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289876189}
-  - component: {fileID: 289876191}
   - component: {fileID: 289876190}
+  - component: {fileID: 289876191}
   m_Layer: 0
   m_Name: CloseRangeAttack
   m_TagString: Untagged
@@ -651,8 +647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   attackDamage: 0
---- !u!60 &289876191
-PolygonCollider2D:
+--- !u!61 &289876191
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -664,7 +660,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5683379, y: 0.0100284815}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -674,15 +670,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.41328925, y: 1.1993971}
-      - {x: 0.45531672, y: 0.45107487}
-      - {x: 0.43421477, y: -1.3852768}
-      - {x: 2.161992, y: -1.3749808}
-      - {x: 2.1709013, y: 0.91120315}
-      - {x: 2.1123798, y: 1.0761216}
-      - {x: 2.1421611, y: 1.2017767}
+  serializedVersion: 2
+  m_Size: {x: 2.1366758, y: 1.2220407}
+  m_EdgeRadius: 0
 --- !u!1001 &323472618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1101,8 +1091,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483232757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -0.28, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2, y: -0.8, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 213359752}
   m_RootOrder: 0
@@ -1165,7 +1155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4643743792949958635, guid: 6714b9e95ffc0d74c842047a1010d635, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -58573,13 +58563,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522754031}
-  m_LocalRotation: {x: -0, y: -0, z: 0.6929945, w: 0.7209429}
-  m_LocalPosition: {x: 0.74, y: -0.09, z: 0}
-  m_LocalScale: {x: 0.8086986, y: 2.0440083, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.84, y: -0.03, z: 0}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_Children: []
   m_Father: {fileID: 289876189}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 87.735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1522754033
 Animator:
   serializedVersion: 3
@@ -58638,7 +58628,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3357456237637211654, guid: 25dc5e665b1dafa47a60b26dc37081f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

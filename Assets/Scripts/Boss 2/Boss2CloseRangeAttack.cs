@@ -11,7 +11,7 @@ public class Boss2CloseRangeAttack : Boss2BaseState
 
 
     public GameObject Attack;
-    public PolygonCollider2D AttackHitbox;
+    public BoxCollider2D AttackHitbox;
     Animator animator;
 
 
@@ -23,7 +23,7 @@ public class Boss2CloseRangeAttack : Boss2BaseState
 
         Timer = 0f;
         Attack = Boss.gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-        AttackHitbox = Attack.GetComponent<PolygonCollider2D>();
+        AttackHitbox = Attack.GetComponent<BoxCollider2D>();
         //AttackHitbox = Boss.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<PolygonCollider2D>();
     }
     public override void UpdateState(Boss2StateManager Boss)

@@ -5510,7 +5510,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6828801848533881926, guid: 95df5d8f882d8f54fa7595aa3c47d5e4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828801848533881927, guid: 95df5d8f882d8f54fa7595aa3c47d5e4, type: 3}
+      propertyPath: max_enemies
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6828801848533881944, guid: 95df5d8f882d8f54fa7595aa3c47d5e4, type: 3}
       propertyPath: m_RootOrder

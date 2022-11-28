@@ -754,7 +754,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.2708333, y: 0.8333334, z: 0}
   m_MaxChunkCount: 16
@@ -1707,6 +1707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5611495032247999242, guid: a277ab22ff74c244981b9852447160ab, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1855364050}
     - target: {fileID: 5611495032247999245, guid: a277ab22ff74c244981b9852447160ab, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2031,7 +2035,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 4.5, y: 3.5, z: 0}
   m_MaxChunkCount: 16

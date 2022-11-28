@@ -460,6 +460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5611495032247999242, guid: a277ab22ff74c244981b9852447160ab, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1366166185}
     - target: {fileID: 5611495032247999245, guid: a277ab22ff74c244981b9852447160ab, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -940,7 +944,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
   m_MaxChunkCount: 16
@@ -5588,7 +5592,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.516407
+  orthographic size: 7.3347974
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

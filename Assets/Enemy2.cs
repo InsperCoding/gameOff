@@ -1,0 +1,83 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Pathfinding;
+using UnityEngine.UI;
+
+public class Enemy2 : MonoBehaviour
+{
+    private int maxHealth = 5;
+    private Transform player;
+
+    private int currentHealth;
+    private Rigidbody2D rb;
+    private float strength = 2f;
+    private float delay = 0.5f;
+
+    public GameObject hpSlider;
+ 
+    Animator animator;
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player").GetComponent<Transform>();
+        gameObject.GetComponent<AIDestinationSetter>().target = player;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    
+    private IEnumerator Reset(){
+        GetComponent<AIDestinationSetter>().enabled = false;
+        GetComponent<AIPath>().enabled = false;
+        yield return new WaitForSeconds(delay);
+        GetComponent<AIDestinationSetter>().enabled = true;
+        GetComponent<AIPath>().enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print(other.gameObject.tag);
+        if (other.gameObject.tag == "Sword" || other.gameObject.tag == "PowerUp")
+        {
+            print("dano");
+            TakeDamage();
+        }
+    }
+
+    void TakeDamage(){
+        currentHealth--;   
+        animator.SetTrigger("TookDamage");
+        if (currentHealth <= 0)
+        {
+            // Invoke("Die", .3f);
+            Destroy(gameObject);
+            Debug.Log("Enemy Killed");
+            //currentHealth = maxHealth;
+        }
+        KnockBack();
+        hpSlider.GetComponent<Slider>().value = currentHealth;
+    }
+
+    void Die()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().EnemyKilled(transform.position);
+        Destroy(gameObject);
+
+    }
+
+    void KnockBack()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Reset());
+        Vector2 difference = transform.position - player.position;
+        rb.AddForce(difference * strength, ForceMode2D.Impulse);
+    }
+}

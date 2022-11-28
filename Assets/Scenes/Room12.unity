@@ -410,6 +410,34 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2064423471}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveNextRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MoveToRoom, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585729283532034761, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
+      propertyPath: interactionAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3585729283532034763, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
       propertyPath: m_Name
       value: InteractableCircle
@@ -4297,6 +4325,7 @@ GameObject:
   - component: {fileID: 2064423468}
   - component: {fileID: 2064423470}
   - component: {fileID: 2064423469}
+  - component: {fileID: 2064423471}
   m_Layer: 0
   m_Name: Tilemap_Door_Back
   m_TagString: Untagged
@@ -4405,3 +4434,16 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2064423471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064423467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17e74f71bd7b984094fb7a3b170fe50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoomNumber: 13

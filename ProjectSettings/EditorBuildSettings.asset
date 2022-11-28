@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3952278db8b3da744a93f80fe16055f6
   - enabled: 1
-    path: Assets/Scenes/RoomStart.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Room0.unity
+    guid: 3ddb20564227e224aa4e775adc00745d
   - enabled: 1
     path: Assets/Scenes/Room1.unity
     guid: 69de6c1843104ec4bbd643c6bd97db1f
@@ -27,32 +27,41 @@ EditorBuildSettings:
     path: Assets/Scenes/Room5.unity
     guid: 749834626b0f7a14a84989c4ad3a48a8
   - enabled: 1
-    path: Assets/Scenes/RoomBoss.unity
-    guid: c326325bf928184478621732f4e6e946
-  - enabled: 1
-    path: Assets/Scenes/Room6.unity
-    guid: cddfa9fcd55fcac41bdf73ad0a7fcbfa
+    path: Assets/Scenes/Room6_Boss_1.unity
+    guid: 6d9388b0fe1e243449bce17a00d1f224
   - enabled: 1
     path: Assets/Scenes/Room7.unity
     guid: f9efb74aa285d1d479695c368dc83441
   - enabled: 1
+    path: Assets/Scenes/Room8.unity
+    guid: 0ff66f2d2cba106438e73d30834a8619
+  - enabled: 1
+    path: Assets/Scenes/Room9.unity
+    guid: 76556fa29c08d474fabc731895e56a11
+  - enabled: 1
     path: Assets/Scenes/Room10.unity
     guid: 6dc560fe2dab206bf8c07d81e407de49
+  - enabled: 1
+    path: Assets/Scenes/Room11.unity
+    guid: e6f1edbc65fab9e4ea28ac99bb0d7637
+  - enabled: 1
+    path: Assets/Scenes/Room12.unity
+    guid: 8caefaaa6b284db43a83678176da373b
   - enabled: 1
     path: Assets/Scenes/Room13.unity
     guid: e661e09530cd9ab39b4828eb9b28ac3c
   - enabled: 1
-    path: Assets/Scenes/Room20.unity
-    guid: fd9a415a529c3a4458d7235d9fa4dfa5
-  - enabled: 1
-    path: Assets/Scenes/Room21.unity
-    guid: f64ba709ed695e84cbe88cfb48619f4c
-  - enabled: 1
-    path: Assets/Scenes/Room22.unity
+    path: Assets/Scenes/Room14.unity
     guid: ab75f0de50720296bad5dcbbf82f764d
   - enabled: 1
-    path: Assets/Scenes/RoomBoss2.unity
-    guid: 9747fc4401e0fa547b3ecd02ba2df2a7
+    path: Assets/Scenes/Room15.unity
+    guid: fd9a415a529c3a4458d7235d9fa4dfa5
+  - enabled: 1
+    path: Assets/Scenes/Room16.unity
+    guid: f64ba709ed695e84cbe88cfb48619f4c
+  - enabled: 1
+    path: Assets/Scenes/Room17_Boss_2.unity
+    guid: f3f271d33b539d846a036ca3182121a7
   - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: e2d578c0568da6544a52321b9200cecf

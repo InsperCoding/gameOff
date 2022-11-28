@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour
 {   
     public GameObject enemy;
 
+    public int max_enemies;
+
     public Transform[] spawn_points;
 
     public float spawnCD;
@@ -21,8 +23,9 @@ public class Spawner : MonoBehaviour
     {
         currentCD -= Time.deltaTime;
 
-        if(currentCD <= 0){
+        if(currentCD <= 0 && max_enemies != 0){
             spawn_enemy();
+            max_enemies -= 1;
         }
     }
 

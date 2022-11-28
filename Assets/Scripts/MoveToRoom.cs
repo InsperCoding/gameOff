@@ -9,7 +9,7 @@ public class MoveToRoom : MonoBehaviour
     public void MoveNextRoom()
     {
 
-        SceneManager.LoadScene(RoomNumber);
+        SceneManager.LoadScene(RoomNumber+1);
 
     }
 }

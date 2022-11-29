@@ -445,6 +445,7 @@ public class CombatManager : MonoBehaviour
             //Cura bastante com base na vida perdida
                 playerUnit.healUnit(0.2f * GlobalMagicSlots.waterLevel);
                 systemDialogue.text = "The player is greatly healed!";
+                FindObjectOfType<AudioManager>().Play("waterPowerUp");
                 break;
             case"Mud":
             // Diminui speed do inimigo, cura por valor pequeno e dá dano pequeno
@@ -478,18 +479,21 @@ public class CombatManager : MonoBehaviour
                 playerUnit.currStr += (int) Mathf.Ceil((0.1f * GlobalMagicSlots.fireLevel) * playerUnit.str);
                 systemDialogue.text = "Player strength is greatly buffed!";
                 enemyUnit.TakeDamage(1f, playerUnit.currStr);
+                FindObjectOfType<AudioManager>().Play("firePowerUp");
                 break;
             case"Earth v2":
             // Aumenta bastante a defesa. Causa dano baixo
                 playerUnit.currDef += (int) Mathf.Ceil((0.1f * GlobalMagicSlots.earthLevel) * playerUnit.def);
                 systemDialogue.text = "Player defense is greatly buffed!";
                 enemyUnit.TakeDamage(0.2f, playerUnit.currStr);
+                FindObjectOfType<AudioManager>().Play("earthPowerUp");
                 break;
             case"Electric v2":
             // Aumenta bastante a velocidade. Causa dano médio
                 playerUnit.currSpd += (int) Mathf.Ceil((0.2f * GlobalMagicSlots.eletricLevel) * playerUnit.spd);
                 systemDialogue.text = "Player speed is greatly buffed!";
                 enemyUnit.TakeDamage(0.5f, playerUnit.currStr);
+                FindObjectOfType<AudioManager>().Play("electricityPowerUp");
                 break;
 
             case"Healing Touch":

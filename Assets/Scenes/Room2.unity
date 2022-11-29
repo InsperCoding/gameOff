@@ -577,7 +577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomNumber: 3
-  toCombat: 0
 --- !u!483693784 &89634868
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -1006,7 +1005,7 @@ RectTransform:
   - {fileID: 696471758}
   - {fileID: 1558546251}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1249,6 +1248,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330540073}
   m_CullTransparentMesh: 1
+--- !u!1001 &347652663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 378146469847001456, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543451162187738079, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d168e5b14aaca41c0bc8527bc9ae6a1d, type: 3}
 --- !u!1 &369983642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,7 +2148,7 @@ Transform:
   - {fileID: 1458584303}
   - {fileID: 89634865}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &511738305
 PrefabInstance:
@@ -3205,7 +3261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &928198879
 GameObject:
@@ -3304,7 +3360,7 @@ Transform:
   m_Children:
   - {fileID: 6972891}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &942025439
 PrefabInstance:
@@ -4364,7 +4420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430058993
 GameObject:
@@ -4664,7 +4720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomNumber: 3
-  toCombat: 0
 --- !u!483693784 &1458584306
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -6974,7 +7029,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1635974365
 PrefabInstance:
@@ -7354,7 +7409,7 @@ Transform:
   m_LocalScale: {x: 3.4156759, y: 3.4083574, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1909642130
 PrefabInstance:

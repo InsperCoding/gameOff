@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
     }
 
     void TakeDamage(){
+        FindObjectOfType<AudioManager>().Play("snakeAttack");
         currentHealth--;
         animator.SetTrigger("TookDamage");
         if(currentHealth <= 0){

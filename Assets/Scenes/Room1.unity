@@ -169,7 +169,7 @@ Transform:
   - {fileID: 643351662}
   - {fileID: 1334155590}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &103051096
 GameObject:
@@ -265,7 +265,7 @@ RectTransform:
   - {fileID: 412724635}
   - {fileID: 445340391}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2460,7 +2460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomNumber: 2
-  toCombat: 0
 --- !u!19719996 &643351666
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -5193,7 +5192,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &992252151
 PrefabInstance:
@@ -5570,7 +5569,7 @@ Transform:
   m_Children:
   - {fileID: 637598874}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289488679
 GameObject:
@@ -5737,7 +5736,7 @@ Transform:
   m_LocalScale: {x: 3.4156759, y: 3.4083574, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1292773407
 PrefabInstance:
@@ -6515,7 +6514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomNumber: 2
-  toCombat: 0
 --- !u!19719996 &1334155594
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6901,7 +6899,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1683933847
 PrefabInstance:
@@ -7432,6 +7430,110 @@ Transform:
   m_GameObject: {fileID: 1715698829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1767212164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767212166}
+  - component: {fileID: 1767212165}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1767212165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767212164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331b553990af210e7a97d606f80d1206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: waterPowerUp
+    clip: {fileID: 8300000, guid: 1fe7bc11c8c45d9fca8f2ae4f98caadf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: firePowerUp
+    clip: {fileID: 8300000, guid: adb1ae88171d6e8ba975251f2ded28d4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: earthPowerUp
+    clip: {fileID: 8300000, guid: 7e9fa875a3f9e88858f46c59a03d88ff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: electricityPowerUp
+    clip: {fileID: 8300000, guid: dd84dcff15f66430b94bd54a91334fd1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: snakeAttack
+    clip: {fileID: 8300000, guid: 2ff0882a09d5c77f8a356a490efe2d90, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: swordAttack
+    clip: {fileID: 8300000, guid: 7b687cbe286d24ef1b3edd855aaaee6c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ghostAttack
+    clip: {fileID: 8300000, guid: 3782e6596fe0d8b1a90640876855b232, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: demonAttack
+    clip: {fileID: 8300000, guid: f2bea68db9f67a4eab4427f8d524638d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ingameLoopSoundtrack
+    clip: {fileID: 8300000, guid: 02cc2e7c4909b64b3b2343fe6bdcac69, type: 3}
+    volume: 0.303
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: menuSoundtrack
+    clip: {fileID: 8300000, guid: 380989744d74f9faeb95071ebdf97112, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1767212166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767212164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

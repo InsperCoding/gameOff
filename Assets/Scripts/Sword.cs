@@ -34,5 +34,6 @@ public class Sword : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
+        FindObjectOfType<AudioManager>().Play("swordAttack");
     }
 }

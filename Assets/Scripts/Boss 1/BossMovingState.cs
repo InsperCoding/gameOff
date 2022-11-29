@@ -9,6 +9,7 @@ public class BossMovingState : BossBaseState
     public override void EnterState(BossStateManager boss){
         Debug.Log("Hello from movement state");
         rand = new System.Random();
+        boss.GetComponent<Animator>().SetBool("isAttacking", false);
     }
 
     public override void UpdateState(BossStateManager Boss){
@@ -25,16 +26,13 @@ public class BossMovingState : BossBaseState
         {
             Boss.GetComponent<SpriteRenderer>().flipX = false;
         }
-
-        if (Math.Sqrt(distance.x*distance.x + distance.y*distance.y) > 2){
+        if (distance.magnitude > 5){
+            Boss.SwitchState(Boss.VanishState);
+        }
+        else if (distance.magnitude > 2){
             Boss.rb.velocity = (direction * Boss.speed);
         } else {
-            int isHorizontal = rand.Next(0,2);
-            if (isHorizontal == 1){
-                Boss.SwitchState(Boss.HorizontalAttackState);
-            } else {
-                Boss.SwitchState(Boss.VerticalAttackState);
-            }
+            Boss.SwitchState(Boss.VerticalAttackState);
         }
     }
 }

@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class BossVerticalAttackState : BossBaseState
 {
-    float timeOnAttack  = 1.3f;
-    float timeToStartAttack = 0.3f;
-    float recoveryTime = 1f;
+    float timeToStartAttack = 0.5f;
+    float timeOnAttack = 0.5f;
+    float recoveryTime = 0.1f;
     float timer = 0;
     GameObject attack;
     BoxCollider2D attackHitbox;
+    Animator animator;
 
     public override void EnterState(BossStateManager boss){
         Debug.Log("Hello from the boss vertical attack state");
         boss.rb.velocity = (new Vector2(0,0));
         attack = boss.gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
         attackHitbox = attack.GetComponent<BoxCollider2D>();
+        animator = boss.GetComponent<Animator>();
         
         timer = 0;
 
-        activateAttack();
     }
 
     public override void UpdateState(BossStateManager boss){
         timer += Time.deltaTime;
 
         if (timer < timeToStartAttack){
-            ;
+            animator.SetBool("isAttacking", true);
         }
         //Active frames
         else if (timer > timeToStartAttack && timer < timeOnAttack + timeToStartAttack){
@@ -38,6 +39,7 @@ public class BossVerticalAttackState : BossBaseState
         }
         //Fim do estado
         else {
+            animator.SetBool("isAttacking", false);
             boss.SwitchState(boss.MovingState);
         }
     }

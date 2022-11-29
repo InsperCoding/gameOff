@@ -8,6 +8,8 @@ public class BossStateManager : MonoBehaviour
     public BossHorizontalAttackState HorizontalAttackState = new BossHorizontalAttackState();
     public BossVerticalAttackState VerticalAttackState = new BossVerticalAttackState();
     public BossMovingState MovingState = new BossMovingState();
+    public BossVanishState VanishState = new BossVanishState();
+
     
     public Rigidbody2D rb;
     public Transform player;

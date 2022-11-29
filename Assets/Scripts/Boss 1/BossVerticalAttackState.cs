@@ -36,6 +36,7 @@ public class BossVerticalAttackState : BossBaseState
         //Recovery frames
         else if (timer < timeToStartAttack + timeOnAttack + recoveryTime){
             attackHitbox.enabled = false;
+            attack.GetComponent<SpriteRenderer>().enabled = false;
         }
         //Fim do estado
         else {
@@ -45,6 +46,7 @@ public class BossVerticalAttackState : BossBaseState
     }
 
     void activateAttack(){
+        attack.GetComponent<SpriteRenderer>().enabled = true;
         attackHitbox.enabled = true;
     }
 }

@@ -71,13 +71,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            animator.SetTrigger("Hurt");
-            currentHealth--;
-            if (currentHealth <= 0)
-            {
-                GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
-            }
-            KnockBack(other.gameObject.transform);
+            Damage(other.gameObject.transform);
         }
     }
 
@@ -87,5 +81,15 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(Reset());
         Vector2 difference = transform.position - sender.position;
         rb.AddForce(difference * strength, ForceMode2D.Impulse);
+    }
+    public void Damage(Transform knokcbackTF)
+    {
+        animator.SetTrigger("Hurt");
+        currentHealth--;
+        if (currentHealth <= 0)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
+        }
+        KnockBack(knokcbackTF);
     }
 }

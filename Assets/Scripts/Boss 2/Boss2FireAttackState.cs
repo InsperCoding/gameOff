@@ -8,11 +8,15 @@ public class Boss2FireAttackState : Boss2BaseState
     float AttackDuration = 0.8f;
     float AttackRecovery = 0.1f;
     float Timer = 0f;
+    float angle;
+    Vector2 direction;
+    Animator animator;
+    Quaternion rotationQuaternion;
 
 
     public GameObject Attack;
     public BoxCollider2D AttackHitbox;
-    Animator animator;
+    
 
 
 
@@ -31,7 +35,10 @@ public class Boss2FireAttackState : Boss2BaseState
         Debug.Log("Ataque fogo");
         Timer += Time.deltaTime;
         if (Timer < AttackStartup){
-            ;
+            direction = (Boss.player.position - Boss.transform.position).normalized;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rotationQuaternion = Quaternion.Euler(0f, 0f, angle);
+            Boss.transform.GetChild(0).gameObject.transform.rotation = Quaternion.Slerp(Boss.transform.GetChild(0).gameObject.transform.rotation, rotationQuaternion, 1f*Time.deltaTime);
         }
         else if(Timer < AttackStartup + AttackDuration)
         {

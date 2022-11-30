@@ -6,7 +6,7 @@ public class Boss2StateManager : MonoBehaviour
 {
     Boss2BaseState currentState;
     float timeSinceLastHit;
-    int currentHealth;
+    public int currentHealth;
 
     public int maxHealth;
     public Boss2CloseRangeAttack CloseRangeAttack = new Boss2CloseRangeAttack();

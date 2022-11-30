@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossStateManager : MonoBehaviour
 {
     BossBaseState currentState;
-    int currentHealth;
+    public int currentHealth;
     float timeSinceLastHit;
 
     public int maxHealth;
@@ -43,11 +43,13 @@ public class BossStateManager : MonoBehaviour
         state.EnterState(this);
 
     }
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Bateu");
-        if ((collider.gameObject.tag == "Sword" || collider.gameObject.tag == "PowerUp") && timeSinceLastHit > 1)
+        Debug.Log(other.gameObject.tag);
+        if ((other.gameObject.tag == "Sword" || other.gameObject.tag == "PowerUp") && timeSinceLastHit > 1)
         {
+            Debug.Log("Deu dano");
             currentHealth -= 1;
             timeSinceLastHit = 0;
         }

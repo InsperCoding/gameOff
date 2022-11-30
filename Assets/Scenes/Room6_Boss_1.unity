@@ -521,7 +521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34bed11f7d4898d4b8f3ad10272c9922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  currentHealth: 0
+  maxHealth: 15
   rb: {fileID: 0}
   player: {fileID: 467738033}
   speed: 1

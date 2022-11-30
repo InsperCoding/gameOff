@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c51232aafcb7e45b1ca0541208704d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1903489302}
   attackDamage: 0
 --- !u!61 &213359754
 BoxCollider2D:
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582fdbdda1c320141956da7bc238b6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 18
   rb: {fileID: 0}
   player: {fileID: 1758097690}
   speed: 1
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c51232aafcb7e45b1ca0541208704d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1903489302}
   attackDamage: 0
 --- !u!61 &289876191
 BoxCollider2D:
@@ -57017,6 +57018,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3585729283532034766, guid: 306d509d7c5b07c4391117b57a33099a, type: 3}
   m_PrefabInstance: {fileID: 1797097326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1903489302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6122361087030983980, guid: 4848085ba4a896646851cbc5e176f05e, type: 3}
+  m_PrefabInstance: {fileID: 1758097689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1946251152
 GameObject:

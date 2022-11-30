@@ -18,7 +18,8 @@ public class BossVerticalHitboxLogic : MonoBehaviour
         if (collider.gameObject.name == "PlayerPUp")
         {
             Debug.Log("Acertou o player!");
-            playerHealth.Damage(transform);
+            playerHealth.Damage(transform.parent.gameObject.transform.parent.gameObject.transform);
+            transform.parent.gameObject.transform.parent.gameObject.GetComponent<BossStateManager>().currentHealth++;
         }
     }
 }

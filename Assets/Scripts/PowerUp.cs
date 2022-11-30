@@ -15,12 +15,18 @@ public class PowerUp : MonoBehaviour
 
     private SpriteRenderer sr;
     private Animator animator;
+
+    public GameObject InventoryPup;
+    public InventorySlot[] magicSlots;
+    InventoryItem[] itemInSlot = { null, null, null, null };
+    InventorySlot[] slot = { null, null, null, null };
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CircleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        InventoryPup = GameObject.Find("InventoryPup").transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -32,11 +38,11 @@ public class PowerUp : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha2) || Input.GetKey(KeyCode.Alpha3) || Input.GetKey(KeyCode.Alpha4))
             {
+                coolDown = false;
                 print(Input.inputString);
                 key1 = Input.inputString;
                 print("Power Up Activated");
                 ActivatePowerUp(key1);
-                coolDown = false;
                 StartCoroutine("PowerUpCoolDown");
             }
         }
@@ -46,43 +52,138 @@ public class PowerUp : MonoBehaviour
     void ActivatePowerUp(string key1)
     {
 
+        for (int i = 0; i < magicSlots.Length; i++)
+        {
+            print(i);
+            magicSlots[i] = InventoryPup.transform.GetChild(i).GetComponent<InventorySlot>();
+            slot[i] = magicSlots[i];
+            itemInSlot[i] = slot[i].GetComponentInChildren<InventoryItem>();
+        }
+
 
         if (key1 == "1")
         {
-            if (GlobalMagicSlots.eletricLevel >= 0)
+            print(itemInSlot);
+            if (itemInSlot[1] != null)
             {
-                print("Eletrical");
-                animator.SetInteger("Pup", 1);
-                cc.radius = finalRadious;
+                if (itemInSlot[1].item.name == "Eletrical")
+                {
+                    print("Eletrical");
+                    animator.SetInteger("Pup", 1);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[1].item.name == "Fire")
+                {
+                    print("Fire");
+                    animator.SetInteger("Pup", 2);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[1].item.name == "Water")
+                {
+                    print("Water");
+                    animator.SetInteger("Pup", 3);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[1].item.name == "Earth")
+                {
+                    print("Earth");
+                    animator.SetInteger("Pup", 4);
+                    cc.radius = finalRadious;
+                }
             }
+
         }
         else if (key1 == "2")
         {
-            if (GlobalMagicSlots.fireLevel >= 0)
+            if (itemInSlot[2] != null)
             {
-                print("Fire");
-                animator.SetInteger("Pup", 2);
-                cc.radius = finalRadious;
+                if (itemInSlot[2].item.name == "Eletrical")
+                {
+                    print("Eletrical");
+                    animator.SetInteger("Pup", 1);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[2].item.name == "Fire")
+                {
+                    print("Fire");
+                    animator.SetInteger("Pup", 2);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[2].item.name == "Water")
+                {
+                    print("Water");
+                    animator.SetInteger("Pup", 3);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[2].item.name == "Earth")
+                {
+                    print("Earth");
+                    animator.SetInteger("Pup", 4);
+                    cc.radius = finalRadious;
+                }
             }
         }
         else if (key1 == "3")
         {
-            if (GlobalMagicSlots.waterLevel >= 0)
+            if (itemInSlot[3] != null)
             {
-                print("Water");
-                animator.SetInteger("Pup", 3);
-                cc.radius = finalRadious;
+                if (itemInSlot[3].item.name == "Eletrical")
+                {
+                    print("Eletrical");
+                    animator.SetInteger("Pup", 1);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[3].item.name == "Fire")
+                {
+                    print("Fire");
+                    animator.SetInteger("Pup", 2);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[3].item.name == "Water")
+                {
+                    print("Water");
+                    animator.SetInteger("Pup", 3);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[3].item.name == "Earth")
+                {
+                    print("Earth");
+                    animator.SetInteger("Pup", 4);
+                    cc.radius = finalRadious;
+                }
             }
         }
         else if (key1 == "4")
         {
-            if (GlobalMagicSlots.earthLevel >= 0)
+            if (itemInSlot[4] != null)
             {
-                print("Earth");
-                animator.SetInteger("Pup", 4);
-                cc.radius = finalRadious;
+                if (itemInSlot[4].item.name == "Eletrical")
+                {
+                    print("Eletrical");
+                    animator.SetInteger("Pup", 1);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[4].item.name == "Fire")
+                {
+                    print("Fire");
+                    animator.SetInteger("Pup", 2);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[4].item.name == "Water")
+                {
+                    print("Water");
+                    animator.SetInteger("Pup", 3);
+                    cc.radius = finalRadious;
+                }
+                if (itemInSlot[4].item.name == "Earth")
+                {
+                    print("Earth");
+                    animator.SetInteger("Pup", 4);
+                    cc.radius = finalRadious;
+                }
             }
         }
+
 
         if (cc.radius > starterRadious)
         {

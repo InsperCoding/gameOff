@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            //hearts[i] = canvasHearts.transform.GetChild(i).GetComponent<Image>();
+            hearts[i] = canvasHearts.transform.GetChild(i).GetComponent<Image>();
         }
 
     }
@@ -41,21 +41,21 @@ public class PlayerHealth : MonoBehaviour
         {
             if (i < currentHealth)
             {
-                //hearts[i].sprite = fullHeart;
+                hearts[i].sprite = fullHeart;
             }
             else
             {
-                //hearts[i].sprite = emptyHeart;
+                hearts[i].sprite = emptyHeart;
             }
 
             // Para aumentar a quantidade de coracoes do player
             if (i < numOfHearts)
             {
-                //hearts[i].enabled = true;
+                hearts[i].enabled = true;
             }
             else
             {
-                //hearts[i].enabled = false;
+                hearts[i].enabled = false;
             }
         }
     }

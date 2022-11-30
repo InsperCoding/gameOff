@@ -80,4 +80,9 @@ public class GameManager : MonoBehaviour
             scoreText = GameObject.Find("Score");
         }
     }
+    public bool CanEndLevel(int enemiesInLevel)
+    {
+        if (enemiesInLevel < enemiesKilled) return true;
+        return false;
+    }
 }

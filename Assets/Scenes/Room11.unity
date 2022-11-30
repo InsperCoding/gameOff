@@ -16706,7 +16706,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1647889998}
-  offset: {x: 0, y: 0, z: -10}
 --- !u!81 &1267631377
 AudioListener:
   m_ObjectHideFlags: 0
@@ -16803,6 +16802,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6828801848533881927, guid: 95df5d8f882d8f54fa7595aa3c47d5e4, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 7773432864216598721, guid: 7f46d1915efbb9948827a03c95dfbc63, type: 3}
     - target: {fileID: 6828801848533881927, guid: 95df5d8f882d8f54fa7595aa3c47d5e4, type: 3}
       propertyPath: max_enemies
       value: 20

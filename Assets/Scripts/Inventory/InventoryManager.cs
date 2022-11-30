@@ -10,8 +10,31 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryUI;
     public Item[] elements;
 
+    public GameObject InventoryGroup;
+    public GameObject InventoryElements;
+    public GameObject InventoryPup;
+
     private void Start()
     {
+
+        InventoryGroup = GameObject.Find("InventoryGroup");
+        inventoryUI = GameObject.Find("InventoryGroup");
+        InventoryElements = GameObject.Find("InventoryElements").transform.GetChild(0).gameObject;
+        InventoryPup = GameObject.Find("InventoryPup").transform.GetChild(0).gameObject;
+        InventoryGroup.SetActive(false);
+
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            inventorySlots[i] = InventoryElements.transform.GetChild(i).GetComponent<InventorySlot>();
+        }
+
+        for (int i = 0; i < magicSlots.Length; i++)
+        {
+            magicSlots[i] = InventoryPup.transform.GetChild(i).GetComponent<InventorySlot>();
+        }
+
+
+
         //Inicializa o espacos de magia
         if (GlobalMagicSlots.fireLevel > 0)
         {
@@ -21,10 +44,10 @@ public class InventoryManager : MonoBehaviour
             }
             GlobalInventory.fireLevel = 0;
         }
-        
+
         if (GlobalMagicSlots.waterLevel > 0)
         {
-            for(int i = 0; i < GlobalMagicSlots.waterLevel; i++)
+            for (int i = 0; i < GlobalMagicSlots.waterLevel; i++)
             {
                 AddMagic(elements[1]);
             }
@@ -75,10 +98,10 @@ public class InventoryManager : MonoBehaviour
                 AddItem(elements[0]);
             }
         }
-        
+
         if (GlobalInventory.waterLevel > 0)
         {
-            for(int i = 0; i < GlobalInventory.waterLevel; i++)
+            for (int i = 0; i < GlobalInventory.waterLevel; i++)
             {
                 AddItem(elements[1]);
             }
@@ -128,7 +151,7 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null)
             {
-                if(itemInSlot.item.name == "Fire")
+                if (itemInSlot.item.name == "Fire")
                 {
                     GlobalInventory.fireLevel = itemInSlot.level;
                     GlobalMagicSlots.fireLevel = 0;

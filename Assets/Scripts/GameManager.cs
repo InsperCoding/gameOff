@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             // scoreText.GetComponent<UnityEngine.UI.Text>().text = PlayerPrefs.GetInt("score").ToString();
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene("Room1");
+                SceneManager.LoadScene("Room0");
             }
         }
 

@@ -49,7 +49,7 @@ public class PowerUp : MonoBehaviour
 
         if (key1 == "1")
         {
-            if (GlobalMagicSlots.eletricLevel > 0)
+            if (GlobalMagicSlots.eletricLevel >= 0)
             {
                 print("Eletrical");
                 animator.SetInteger("Pup", 1);
@@ -58,7 +58,7 @@ public class PowerUp : MonoBehaviour
         }
         else if (key1 == "2")
         {
-            if (GlobalMagicSlots.fireLevel > 0)
+            if (GlobalMagicSlots.fireLevel >= 0)
             {
                 print("Fire");
                 animator.SetInteger("Pup", 2);
@@ -67,7 +67,7 @@ public class PowerUp : MonoBehaviour
         }
         else if (key1 == "3")
         {
-            if (GlobalMagicSlots.waterLevel > 0)
+            if (GlobalMagicSlots.waterLevel >= 0)
             {
                 print("Water");
                 animator.SetInteger("Pup", 3);
@@ -76,7 +76,7 @@ public class PowerUp : MonoBehaviour
         }
         else if (key1 == "4")
         {
-            if (GlobalMagicSlots.earthLevel > 0)
+            if (GlobalMagicSlots.earthLevel >= 0)
             {
                 print("Earth");
                 animator.SetInteger("Pup", 4);

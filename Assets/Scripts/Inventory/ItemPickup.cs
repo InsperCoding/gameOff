@@ -8,6 +8,11 @@ public class ItemPickup : MonoBehaviour
     public GameObject inSceneObject;
     public InventoryManager inventoryManager;
 
+    private void Start()
+    {
+        inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+    }
+
     public void PickUp()
     {
         Debug.Log("Picking up "+ item.name);

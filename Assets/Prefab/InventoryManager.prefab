@@ -61,8 +61,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   inventoryItemPrefab: {fileID: 5512615515008694095, guid: 87abcadf21c627248880cfea3361b9eb, type: 3}
   inventoryUI: {fileID: 0}
   elements:
@@ -72,3 +70,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4615f4d9eaff2d143aec844c72f95297, type: 2}
   - {fileID: 11400000, guid: c5ce1d20441db9446a5948ae82375a04, type: 2}
   - {fileID: 11400000, guid: f519aafcb570ba840a272ab224e1de62, type: 2}
+  InventoryGroup: {fileID: 0}
+  InventoryElements: {fileID: 0}
+  InventoryPup: {fileID: 0}

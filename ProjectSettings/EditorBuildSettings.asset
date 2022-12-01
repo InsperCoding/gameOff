@@ -36,32 +36,32 @@ EditorBuildSettings:
     path: Assets/Scenes/Room8.unity
     guid: 0ff66f2d2cba106438e73d30834a8619
   - enabled: 1
-    path: Assets/Scenes/Room9.unity
+    path: Assets/Scenes/Room11.unity
     guid: 76556fa29c08d474fabc731895e56a11
   - enabled: 1
     path: Assets/Scenes/Room10.unity
     guid: 6dc560fe2dab206bf8c07d81e407de49
   - enabled: 1
-    path: Assets/Scenes/Room11.unity
+    path: Assets/Scenes/Room9.unity
     guid: e6f1edbc65fab9e4ea28ac99bb0d7637
-  - enabled: 1
-    path: Assets/Scenes/Room12.unity
-    guid: 8caefaaa6b284db43a83678176da373b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Room13.unity
     guid: e661e09530cd9ab39b4828eb9b28ac3c
-  - enabled: 1
-    path: Assets/Scenes/Room14.unity
-    guid: ab75f0de50720296bad5dcbbf82f764d
-  - enabled: 1
-    path: Assets/Scenes/Room15.unity
-    guid: fd9a415a529c3a4458d7235d9fa4dfa5
-  - enabled: 1
-    path: Assets/Scenes/Room16.unity
-    guid: f64ba709ed695e84cbe88cfb48619f4c
-  - enabled: 1
-    path: Assets/Scenes/Room17_Boss_2.unity
-    guid: f3f271d33b539d846a036ca3182121a7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: e2d578c0568da6544a52321b9200cecf

@@ -36,7 +36,12 @@ public class BossStateManager : MonoBehaviour
     {
         timeSinceLastHit += Time.deltaTime;
         currentState.UpdateState(this);
-        if (currentHealth <= 0) { Destroy(gameObject); }
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            var script = GameObject.Find("Score").GetComponent<ScoreScript>();
+            script.AddScore(50);
+        }
     }
     public void SwitchState(BossBaseState state)
     {

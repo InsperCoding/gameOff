@@ -58,6 +58,8 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             // Invoke("Die", .3f);
+            var script = GameObject.Find("/Canvas/Score").GetComponent<ScoreScript>();
+            script.AddScore(5);
             Destroy(gameObject);
             Debug.Log("Enemy Killed");
             //currentHealth = maxHealth;
@@ -68,9 +70,9 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        Debug.Log("Penis");
         GameObject.Find("GameManager").GetComponent<GameManager>().EnemyKilled(transform.position);
         Destroy(gameObject);
-
     }
 
     void KnockBack()

@@ -542,10 +542,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 15
+  maxHealth: 7
   rb: {fileID: 0}
   player: {fileID: 467738033}
   speed: 1
+  sr: {fileID: 277401926}
 --- !u!212 &277401926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2693,7 +2694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35750a8e73a1cb48b019b2297f870e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 467738033}
 --- !u!1 &1506174614
 GameObject:
   m_ObjectHideFlags: 0

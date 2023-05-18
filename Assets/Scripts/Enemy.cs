@@ -58,8 +58,7 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             // Invoke("Die", .3f);
-            var script = GameObject.Find("/Canvas/Score").GetComponent<ScoreScript>();
-            script.AddScore(5);
+            GameObject.Find("/Canvas/Score").GetComponent<ScoreScript>().AddScore(5);
             Destroy(gameObject);
             Debug.Log("Enemy Killed");
             //currentHealth = maxHealth;

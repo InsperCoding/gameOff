@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject enemy;
     private Vector3 offset;
+    public int score = 0;
 
     int enemiesKilled;
 

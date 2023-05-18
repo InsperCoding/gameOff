@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss2StateManager : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class Boss2StateManager : MonoBehaviour
         currentState.UpdateState(this);
         if (currentHealth <= 0 ) { 
             GameObject.Find("/Canvas/Score").GetComponent<ScoreScript>().AddScore(150);
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            SceneManager.LoadScene("VictoryScreen");
             }
     }
     public void SwitchState(Boss2BaseState state){

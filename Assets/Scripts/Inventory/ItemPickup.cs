@@ -7,6 +7,7 @@ public class ItemPickup : MonoBehaviour
     public Item item;
     public GameObject inSceneObject;
     public InventoryManager inventoryManager;
+    public PlayerHealth lives;
 
     private void Start()
     {
@@ -21,6 +22,11 @@ public class ItemPickup : MonoBehaviour
         if (added)
         {
             Destroy(inSceneObject);
+        }
+        if (item.name == "Life")
+        {
+            lives = GameObject.Find("Player").GetComponent<PlayerHealth>();
+            lives.currentHealth = 5;
         }
     }
 

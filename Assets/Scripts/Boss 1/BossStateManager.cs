@@ -18,6 +18,7 @@ public class BossStateManager : MonoBehaviour
     public Rigidbody2D rb;
     public Transform player;
     public float speed;
+    public SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,12 @@ public class BossStateManager : MonoBehaviour
     {
         timeSinceLastHit += Time.deltaTime;
         currentState.UpdateState(this);
-        if (currentHealth <= 0) { Destroy(gameObject); }
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            var script = GameObject.Find("Score").GetComponent<ScoreScript>();
+            script.AddScore(50);
+        }
     }
     public void SwitchState(BossBaseState state)
     {
@@ -43,6 +49,7 @@ public class BossStateManager : MonoBehaviour
         state.EnterState(this);
 
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Bateu");
@@ -51,7 +58,32 @@ public class BossStateManager : MonoBehaviour
         {
             Debug.Log("Deu dano");
             currentHealth -= 1;
+            StartCoroutine(DamageEffectSequence(sr, Color.red, (float)0.5, (float)0.1)); 
             timeSinceLastHit = 0;
         }
+
+    }
+
+    IEnumerator DamageEffectSequence(SpriteRenderer sr, Color dmgColor, float duration, float delay)
+    {
+        // save origin color
+        Color originColor = sr.color;
+
+        // tint the sprite with damage color
+        sr.color = dmgColor;
+
+        // you can delay the animation
+        yield return new WaitForSeconds(delay);
+
+        // lerp animation with given duration in seconds
+        for (float t = 0; t < 1.0f; t += Time.deltaTime/duration)
+        {
+            sr.color = Color.Lerp(dmgColor, originColor , t);
+
+            yield return null;
+        }
+
+        // restore origin color
+        sr.color = originColor;
     }
 }

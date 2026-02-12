@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public Sprite emptyHeart;
     private Animator animator;
 
+    public int score = 0;
+
 
     //Knockback
     private Rigidbody2D rb;
